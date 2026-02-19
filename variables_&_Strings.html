@@ -1,0 +1,66 @@
+<html>
+   <h1>
+      This is the JS testing page
+   </h1>
+   <script>
+      // Initialization & Concatenation
+      let name1 = "John"
+      let name2 = "Doe"
+
+      let name = name1 + name2 // JohnDoe
+      let fullName = name1.concat(' ', name2) // John Doe
+      console.log(fullName)
+
+      // Datatypes & typeof
+      console.log(typeof(fullName)) // "string"
+      fullName = 70;
+      console.log(typeof(fullName)) // "number"
+      fullName = null
+      console.log(typeof(fullName)) // "object" - problematic
+
+      // Template Literals
+      let greeting = `Hello ${name1}!`; // must use backtick (``) not single or double apostrophe ('', "")
+      console.log(greeting)
+
+      console.log("Line1 \nLine2")
+      console.log(
+`Line1
+Line2`
+);
+      console.log (`I got ${(9/10) * 100} out of 100`);
+
+      // prompt
+      fullName = prompt("What is your name?", "Guest");
+      console.log(fullName)
+
+      // ASCII
+      let letter = "A";
+      console.log(letter.charCodeAt(0));  // 65
+      let char = String.fromCharCode(65);
+      console.log(char);  //  A
+
+      // Substrings
+      let phrase = "JavaScript is awesome!";
+      let result = phrase.includes("awesome");
+
+      console.log(result);  // true
+
+      // Slicing Strings
+      let message = "Hello, world!";
+      greeting = message.slice(0, 5); // 0,-8 wouls also work. as 8 from end
+
+      console.log(greeting);  // Hello
+
+      // Trim() removes whitespaces
+
+      // replace()
+      phrase = "Hello, world! Welcome to the world of coding.";
+      console.log(phrase);  // "Hello, world! Welcome to the world of coding."
+      let updatedPhrase = phrase.replace("world", "universe");
+      console.log(updatedPhrase);  // "Hello, universe! Welcome to the world of coding."
+      updatedPhrase = phrase.replaceAll("world", "universe");
+
+      // repeat()
+      console.log(greeting.repeat(3))
+   </script>
+</html>
