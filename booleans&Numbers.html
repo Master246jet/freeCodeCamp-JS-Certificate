@@ -1,0 +1,109 @@
+<html>
+   <script>
+      // Number
+      const infiniteNumber = 1 / 0;
+      console.log(infiniteNumber); // Infinity
+      console.log(typeof infiniteNumber); // number
+
+      const notANumber = 'hello world' / 2;
+      console.log(notANumber); // NaN
+      console.log(typeof(notANumber)) // Still a number (NaN = Number)
+
+      // Exponential
+      const exponent = 2 ** 3;
+      console.log(exponent); // 8
+
+      // Number + Non number
+      const result = 5 + '10'; // + string
+      console.log(result); // 510
+      console.log(typeof result); // string
+
+      const result2 = 'Hello' + true; // string + boolean
+      console.log(result3); // "Hellotrue"
+      console.log(typeof result3); // string
+
+      const result3 = '5' + true; // number + boolean
+      console.log(result3); // "6"
+      console.log(typeof result3); // number
+
+         /* any other data type turns it into a number or NaN (number)
+          even: null -> 0, undefined -> NaN */
+
+      // Unary Operators
+      const str = '42';
+      const strToNum = +str;
+
+      console.log(strToNum); // 42
+      console.log(typeof str); // string
+      console.log(typeof strToNum); // number
+
+      const strNegNum = -str;
+      console.log(strNegNum) // -42
+
+      result = void (2 + 2);
+      console.log(result); // undefined
+
+      // Bitwise Operators
+         /* & for AND
+            | for OR
+            ^ for XOR
+            << shift digits left
+            >> 
+         */
+
+      // Nullish Coalescing Operator
+      const userSettings = {
+      theme: null,
+      volume: 0,
+      notifications: false,
+      };
+
+      let theme = userSettings.theme ?? 'light';
+      console.log(theme); // light
+
+      // Math Object
+      const randomNum = Math.random();
+
+      console.log(randomNum);
+         // any number between 0 and 1 – 0 inclusive and 1 exclusive
+
+      const smallest = Math.min(1, 5, 3, 9);
+      console.log(smallest); // 1
+
+      const largest = Math.max(1, 5, 3, 9);
+      console.log(largest); // 9
+
+      console.log(Math.ceil(4.3)); // 5
+      console.log(Math.floor(4.7)); // 4
+      console.log(Math.round(4.8)); // 5
+
+      console.log(Math.trunc(2.9)); // 2
+      console.log(Math.trunc(9.1)); // 9 
+
+      console.log(Math.sqrt(81)); // 9
+      console.log(Math.cbrt(27)); // 3
+
+      console.log(Math.abs(-5)); // 5
+
+      console.log(Math.pow(2, 3)); // 8
+
+      // NaN
+      console.log(NaN === NaN); // false
+
+      console.log(isNaN(NaN));       // true
+      console.log(isNaN(undefined)); // true
+      console.log(isNaN({}));        // true
+
+      // parseFloat (string to float)
+      console.log(parseFloat("3.14"));     // 3.14
+      console.log(parseFloat("3.14 abc")); // 3.14
+      console.log(parseFloat("3.14.5"));   // 3.14
+      console.log(parseFloat("abc 3.14")); // NaN
+         // same as parseInt
+
+      // S.F.
+      let num = 3.14159;
+      console.log(num.toFixed(2)); // "3.14"
+
+   </script>
+</html>
