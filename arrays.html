@@ -1,0 +1,123 @@
+<html>
+   <script>
+      // Initialization
+      let fruits = ["apple", "banana", "orange"];
+      console.log(fruits.length); // 3
+      console.log(fruits[3]); // undefined
+
+      // Adding to an array
+      fruits[3] = "date"; // Manually
+      console.log(fruits); // ["apple", "blueberry", "cherry", "date"]
+
+      let newLength = fruits.push("orange"); // via .push which returns length of new array
+      console.log(newLength); // 5
+      console.log(fruits); // ["apple", "blueberry", "cherry", "date", "orange"]
+
+      // Reassigning the array
+         // fruits = ["This", "will", "not", "work"];
+         // console.log(fruits); // Uncaught TypeError: Assignment to constant variable. 
+
+      // Removing from an array
+      let lastFruit = fruits.pop();
+      console.log(fruits); // ["apple", "blueberry", "cherry", "date"]
+      console.log(lastFruit); // "orange"
+
+      // Shift & Unshift
+      let numbers = [2, 3];
+      newLength = numbers.unshift(1);
+      console.log(numbers); // [1, 2, 3]
+      console.log(newLength); // 3
+
+      number1 = numbers.shift();
+      console.log(numbers); // [2, 3]
+      console.log(number1) // 1
+
+      // 2D arrays
+      let chessboard = [
+         ["R", "N", "B", "Q", "K", "B", "N", "R"],
+         ["P", "P", "P", "P", "P", "P", "P", "P"],
+         [" ", " ", " ", " ", " ", " ", " ", " "],
+         [" ", " ", " ", " ", " ", " ", " ", " "],
+         [" ", " ", " ", " ", " ", " ", " ", " "],
+         [" ", " ", " ", " ", " ", " ", " ", " "],
+         ["p", "p", "p", "p", "p", "p", "p", "p"],
+         ["r", "n", "b", "q", "k", "b", "n", "r"]
+      ];
+
+      console.log(chessboard[0][3]); // "Q"
+
+      // Destructuring Arrays
+      let colors = ["red", "green", "blue", "yellow"];
+      let [firstColor, , ...thirdColor] = colors;
+
+      console.log(firstColor); // "red"
+      console.log(thirdColor); // ["blue", "yellow"]
+
+      // Turning a string into an array
+      let str = "hello";
+      let charArray = str.split("");
+      console.log(charArray); // ["h", "e", "l", "l", "o"]
+
+      let reverseArr = charArray.reverse();
+      console.log(reverseArr); // ["o", "l", "l", "e", "h"]
+
+      let reverseStr = reverseArr.join("");
+      console.log(reverseStr); // "olleh"
+
+         /* An empty string (""), which splits the string into individual characters.
+         A single space (" "), which splits the string wherever spaces occur.
+         A dash ("-"), which splits the string at each dash. */
+      
+      // indexOf
+      let index = fruits.indexOf("grape");
+      console.log(index); // -1 Not Found
+
+      let color = ["red", "green", "blue", "yellow", "green"];
+      index = color.indexOf("green", 2);
+      console.log(index); // 4 i.e. distance from "blue"
+
+      // splice
+      array.splice(startIndex, itemsToRemove, item1, item2) 
+         /* `itemsToRemove` from `startIndex`
+            `item1` and so on are items to be added in place of `itemsToRemove` 
+         */
+      
+      let array = [1, 2, 3, 4, 5];
+      array.splice(0);
+      console.log(array); // []
+
+      // includes(item, startingPosition)
+      let numbers2 = [10, 20, 30, 40, 50, 60];
+      console.log(numbers.includes(30, 1)); // true
+      console.log(numbers.includes(30, 4)); // false
+
+      // shallow arrays
+         /* Shallow copies are helpful when you need to modify the top-level structure, 
+         such as adding, removing, or reordering elements, 
+         without modifying the original array or the inner array. */
+
+         // 3 methods:
+            // concat
+            const originalArray = [1, 2, 3];
+            const copyArray = [].concat(originalArray);
+
+            console.log(copyArray); // [1, 2, 3]
+            console.log(copyArray === originalArray); // false
+            
+            // slice
+            const originalArray1 = [1, 2, 3];
+            const copyArray1 = originalArray.slice();
+
+            console.log(copyArray); // [1, 2, 3]
+            console.log(copyArray === originalArray); // false
+
+            // spread (...)
+            const originalArray2 = [1, 2, 3];
+            const copyArray2 = [...originalArray];
+
+            console.log(copyArray); // [1, 2, 3]
+            console.log(copyArray === originalArray); // false
+
+      // 
+   </script>
+</html>
