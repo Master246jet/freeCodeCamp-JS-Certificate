@@ -1,0 +1,54 @@
+<html>
+   <script>
+      // General Function
+      function greet(name) {
+      console.log("Hello, " + name + "!");
+      }
+
+      greet("Alice"); // Hello, Alice!
+
+      // Alt ways to write functions
+      const greetings = (name) => {
+         console.log("Hello, " + name + "!");
+      };
+
+      const greetings1 = name => console.log("Hello, " + name + "!");
+
+      // isBoolean?
+      function booWho (arg) {
+      if (typeof(arg) == "boolean") return true
+      else return false
+      }
+
+      console.log(booWho(true)) // true
+
+      let count = 0; // Global
+
+      // A switch function
+      function cardCounter(card) {
+      if (card >= 2 && card <= 10) card = +card;
+      switch (card) {
+         case 2:
+         case 3:
+         case 4:
+         case 5:
+         case 6:
+            count++;
+            console.log(count);
+            break;
+         case 7:
+         case 8:
+         case 9:
+            break;
+         case 10: 
+            count--; break;
+         default: break;
+      }
+
+      if (count > 0)  return count + " Bet";
+      else return count + " Hold";
+
+      
+}
+   </script>
+</html>
