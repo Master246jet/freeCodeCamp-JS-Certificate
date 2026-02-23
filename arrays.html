@@ -83,7 +83,7 @@
          */
       
       let array = [1, 2, 3, 4, 5];
-      array.splice(0);
+      array.splice(0); // emptying an array
       console.log(array); // []
 
       // includes(item, startingPosition)
@@ -110,6 +110,9 @@
 
             console.log(copyArray); // [1, 2, 3]
             console.log(copyArray === originalArray); // false
+
+               // slice is useful for chunking arrays
+               ['ant', 'bison', 'camel', 'duck', 'elephant'].slice(2, 4); // ['camel', 'duck']
 
             // spread (...)
             const originalArray2 = [1, 2, 3];

@@ -1,0 +1,67 @@
+<html>
+   <script>
+      // For loop
+
+      for (let i = 0; i <= 5; i++) console.log(i); // Basic
+
+      const numbers = [1, 2, 3, 4, 5]; 
+      for (const num of numbers) { // for ... of
+         console.log(num);
+      }
+
+      const str = 'freeCodeCamp';
+      for (let char of str) { // for .. of
+         console.log(char);
+      }
+
+      const fruit = {
+         name: 'apple',
+         color: 'red',
+         retail: {
+            street: '123 Main St',
+            city: 'Anytown',
+            state: 'CA'
+         }
+      };   // for .. in
+      for (const prop in fruit) console.log(fruit[prop]);
+         /* John
+            30
+            { street: '123 Main St', city: 'Anytown', state: 'CA' }*/
+
+      // break; & labels
+      outerLoop: for (let i = 0; i < 3; i++) {
+         innerLoop: for (let j = 0; j < 3; j++) {
+            if (i === 1 && j === 1) {
+               break outerLoop;
+            }
+            console.log(`i: ${i}, j: ${j}`);
+         }
+      }
+         /* "i: 0, j: 0"
+            "i: 0, j: 1"
+            "i: 0, j: 2"
+            "i: 1, j: 0" */
+
+      // continue;
+      for (let i = 0; i < 10; i++) {
+         if (i === 5) {
+            continue;
+         }
+         console.log(i);
+      }
+         /* 0
+            1
+            2
+            3
+            4
+            6
+            7
+            8
+            9
+            10, it skips when i === 5*/
+
+      //
+      
+
+   </script>
+</html>
