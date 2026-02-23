@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+   <script>
+      const person = {
+      name: "Alice",
+      age: 30,
+      city: "New York",
+      job: "Designer",
+      city: "New York"
+      };
+
+      console.log(person["name"]); // Alice
+      console.log(person["age"]); //  30
+
+      let yearsLived = "age";
+      console.log(person[yearsLived]); // 30
+
+      // delete
+      delete person.city; // person["city"] are both okay in almost any context
+
+      const { job, city, ...remainingProperties } = person; 
+         // { name: "Alice", age: 30 }
+         console.log(remainingProperties);
+
+      // Checking if an Object has a property
+         // 3 methods:
+         // hasOwnProperty()
+         console.log(person.hasOwnProperty("name")); // true
+         console.log(person.hasOwnProperty("job")); // false
+
+         // in()
+         console.log("name" in person);  // true
+
+         // checking undefined 
+         console.log(person["name"] !== undefined); // true
+         console.log(person.job !== undefined); // false
+
+      // Nested + multiple objects
+      const person1 = {
+         name: "Alice",
+         age: 30,
+         addresses: [
+            { type: "home", street: "123 Main St", city: "Anytown" },
+            { type: "work", street: "456 Market St", city: "Workville" }
+         ],
+         sayHello: function() {
+            return "Hello, my name is " + this.name;
+         }
+      };
+
+      console.log(person.addresses[1].city); // "Workville"
+
+      // Object() constructor
+      const num = 42;
+      const numObj = new Object(num); // Creates an object wrapper for the number
+
+      const newObj = {undefined}; // alt method of making object
+      console.log(newObj); // {}
+
+         // This constructor turns any value into an Object, whilst if there was an object it leaves it as is.
+         // Thus it can be used to verify if a value is an object
+
+      // JSON
+         // One of the reasons why JSON is so popular in web development is because it is both machine-parseable and human-readable.
+      
+         // JSON.stringify() - JS object to JSON string
+         const developerObj = {
+            firstName: "Jessica",
+            isAwesome: true,
+            isMusician: true,
+            country: "USA",
+         };
+         console.log(JSON.stringify(developerObj)); // result: all
+         console.log(JSON.stringify(developerObj, ["firstName", "country"])); // result: {"firstName":"Jessica","country":"USA"}
+
+         // JSON.parse() - JSON string to JS object
+         const jsonString = '{"name":"John","age":30,"isAdmin":true}';
+         const userObject = JSON.parse(jsonString);
+         console.log(userObject);
+
+         // Result:
+         // { name: 'John', age: 30, isAdmin: true }
+
+      // Optional Chaining Operator
+      console.log(person?.address?.street); // This will usually throw an error!
+         // However because we added `?.` JS will only continue if object before ?. exists and is not null / undefined.
+
+      // Object Destructuring
+      const { name, age } = person;
+
+      console.log(name); // Alice
+      console.log(age);  // 30
+
+      const recipe = {
+         name: "Chocolate Cake",
+         ingredients: {
+            flour: "2 cups",
+            sugar: "1 cup"
+         }
+      };
+         // Extract `flour` from `ingredients`
+      const { ingredients: { flour } } = recipe; // same as `const flour = recipe.ingredients.flour;`
+      console.log(flour); // "2 cups"
+
+      // Bracket vs Dot notation
+      const user = {
+         name: "Alex",
+         age: 25,
+         hobby: "Coding"
+      };
+
+         // 1. A dynamic key stored in a variable
+      const keyToLookup = "hobby";
+
+         // This works (returns "Coding")
+      console.log(user[keyToLookup]); 
+
+         // This FAILS (returns undefined) 
+         // It looks for a property literally named "keyToLookup"
+      console.log(user.keyToLookup);
+
+      function getPropertyValue(obj, keyName) {
+         // We don't know what 'keyName' will be until the function is called
+      return obj[keyName]; 
+      }
+
+      console.log(getPropertyValue(user, "name")); // "Alex"
+   </script>
+</html>
